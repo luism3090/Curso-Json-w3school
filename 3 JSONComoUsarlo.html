@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+//	JSON Ejemplo - Objeto De Cadena
+//Crear una cadena de JavaScript que contiene la sintaxis JSON:
+
+var objeto = 	'{ "empleado" : [ '+
+				'{ "Nombre": "Luis", "Apellido": "Molina" }' +
+				']}';
+
+
+console.log(objeto);
+
+var ob = JSON.parse(objeto);
+
+console.log(ob);
+
+console.log(ob.empleado[0].Nombre);
+console.log(ob.empleado[0]["Nombre"]);
+
+
+var objeto2 = '[ '+	
+				' { "Name":"Luis", "lastName":"Torres" }, ' +
+				' { "Name":"Paco", "lastName":"Perez" }, ' +
+				' { "Name":"Pedro", "lastName":"Mata" } ' +
+			  ']';
+
+
+console.log(objeto2);
+
+var ob2 = JSON.parse(objeto2);
+
+
+console.log(ob2);
+console.log(ob2[2].Name);
+console.log(ob2[2]["Name"]);
+
+
+
+var objeto3 = '[ '+	
+				' { "Name":"Luis", "lastName":"Torres" }, ' +
+				' { "Name":"Paco", "lastName":"Perez" }, ' +
+				' { "Name":"Pedro", "lastName":"Mata" } ' +
+			  ']';
+
+console.log(objeto3);
+
+var ob3 = eval("("+objeto3+")");
+
+console.log(ob3);
+
+
+/*	La función eval () puede compilar y ejecutar cualquier JavaScript. 
+Esto representa un problema potencial de seguridad. Trate de evitarlo.*/
+
+
+//El formato JSON se especificó originalmente por Douglas Crockford.
+
+
+
+	</script>
+</body>
+</html>

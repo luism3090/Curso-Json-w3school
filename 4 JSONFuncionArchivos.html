@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="myTutorials.js"></script>
+</head>
+<body>
+	<div id="id01" style='border:1px solid red;height:200px'></div>
+
+
+<script>
+
+    function recorrerJson()
+    {
+        var lista = "<ul>";
+
+        for(x=0; x<matriz.length;x++)
+        {
+            lista += "<li>"+matriz[x]["display"]+"</li>";
+            lista += "<li> <a href="+matriz[x]["url"]+"> "+matriz[x]["display"]+ "</a></li>";
+        }
+        lista += "</ul>";
+
+        document.getElementById("id01").innerHTML = lista;
+
+    }
+
+
+recorrerJson();
+
+</script>
+
+
+
+</body>
+</html>

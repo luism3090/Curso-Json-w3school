@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+		Json Sintaxis
+	</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+/*	
+Nota	Nombres JSON requieren comillas dobles. Nombres de JavaScript no.
+
+
+Los Valores de JSON pueden ser:
+
+Un número (entero o punto flotante)
+Una cadena (entre comillas dobles)
+Booleano (verdadero o falso)
+Una matriz (entre corchetes)
+Un objeto (entre llaves)
+nulo
+*/
+
+// Objetos JSON
+
+var objeto1 = {"Nombre":"Luis", "Apellido":"Molina"};
+var objeto2 = {Nombre:"Luis", Apellido:"Molina"};
+
+//console.log(objeto1);
+//console.log(objeto2);
+
+
+// JSON Arrays
+
+var empleados1 = 
+[
+	{Nombre:"Luis", Apellido:"Molina"},
+	{Nombre:"Juan", Apellido:"Mora"},
+	{Nombre:"Ana", Apellido:"Torres"}
+]
+
+var empleados2 = 
+[
+	{"Nombre":"Luis", "Apellido":"Molina"},
+	{"Nombre":"Juan", "Apellido":"Mora"},
+	{"Nombre":"Ana", "Apellido":"Torres"}
+]
+
+var empleados3=
+'['+
+'{"Nombre":"Luis", "Apellido":"Molina"},' +
+'{"Nombre":"Juan", "Apellido":"Mora"},' +
+'{"Nombre":"Ana", "Apellido":"Torres"}' +
+']';
+
+var objeto3 = JSON.parse(empleados3);
+
+console.log(empleados1);
+
+// accediendo a un Array JSON:
+console.log(empleados1[0].Nombre);
+// También se puede acceder de esta manera:
+console.log(empleados1[0]["Nombre"]);
+
+console.log(empleados2);
+console.log(empleados2[0].Apellido);
+console.log(empleados2[0]["Apellido"]);
+
+console.log(empleados3);
+
+console.log(objeto3);
+console.log(objeto3[2].Apellido);
+console.log(objeto3[2]["Apellido"]);
+
+
+// Los datos pueden ser modificados de esta manera:
+
+empleados1[0].Nombre = "Gilberto";
+
+console.log(empleados1[0].Nombre);
+
+// También se puede modificar de esta manera:
+
+empleados2[0]["Nombre"] = "Hugo";
+console.log(empleados2[0]["Nombre"])
+
+/*
+JSON Archivos
+El tipo de archivo para los archivos JSON es ".json"
+El tipo MIME para el texto JSON es "application / json"
+*/
+
+</script>
+</body>
+</html>
